@@ -1,3 +1,12 @@
-def study_schedule(permanence_period, target_time):
-    """Faça o código aqui."""
-    raise NotImplementedError
+def study_schedule(permanence_period: list, target_time: int):
+    students = 0
+
+    try:
+        for login, logoff in permanence_period:
+            if login <= target_time <= logoff:
+                students += 1
+
+        return students
+
+    except TypeError:
+        return None
